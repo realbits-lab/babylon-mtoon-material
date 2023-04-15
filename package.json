@@ -5,41 +5,43 @@
     "license": "MIT",
     "author": {
         "email": "yamagishi.iloop@gmail.com",
-        "name": "Masaru Yamagishi",
+        "name": "Masaru Yamagishi and Realbits",
         "url": "https://github.com/il-m-yamagishi"
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/virtual-cast/babylon-mtoon-material.git"
+        "url": "https://github.com/realbits-lab/babylon-mtoon-material"
     },
     "keywords": [
         "babylon.js",
         "VRM",
         "MToon",
         "WebGL",
-        "Material"
+        "Material",
+        "Realbits"
     ],
     "files": [
         "dist/**/*",
         "!dist/test/**/*"
     ],
     "typings": "dist/index.d.ts",
-    "main": "dist/index.module.js",
+    "mainOriginal": "dist/index.module.js",
+    "main": "dist/main.es6.js",
     "devDependencies": {
-        "@babylonjs/core": "^5.19.0",
-        "@babylonjs/gui": "^5.19.0",
-        "@babylonjs/gui-editor": "^5.19.0",
-        "@babylonjs/inspector": "^5.19.0",
-        "@babylonjs/loaders": "^5.19.0",
-        "@babylonjs/materials": "^5.19.0",
-        "@babylonjs/serializers": "^5.19.0",
+        "@babylonjs/core": "5.19.0",
+        "@babylonjs/gui": "5.19.0",
+        "@babylonjs/gui-editor": "5.19.0",
+        "@babylonjs/inspector": "5.19.0",
+        "@babylonjs/loaders": "5.19.0",
+        "@babylonjs/materials": "5.19.0",
+        "@babylonjs/serializers": "5.19.0",
         "@semantic-release/git": "^10.0.1",
         "@types/node": "^14.18.22",
         "@types/react": ">=16.7.3",
         "@types/react-dom": ">=16.0.9",
         "@typescript-eslint/eslint-plugin": "~5.16.0",
         "@typescript-eslint/parser": "~5.16.0",
-        "babylonjs-gltf2interface": "^5.0.0",
+        "babylonjs-gltf2interface": "5.0.0",
         "cz-conventional-changelog": "3.3.0",
         "eslint": "^8.11.0",
         "eslint-config-prettier": "~8.5.0",
@@ -62,10 +64,11 @@
         "webpack-merge": "^5.8.0"
     },
     "peerDependencies": {
-        "@babylonjs/core": "^5.19.0"
+        "@babylonjs/core": "5.19.0"
     },
     "scripts": {
         "build": "webpack",
+        "build:development": "webpack --watch --config webpack.config.js",
         "build:gh-pages": "webpack --config webpack.test.config.js",
         "build:test": "yarn build:gh-pages",
         "lint": "yarn lint:check && yarn lint:fix",
